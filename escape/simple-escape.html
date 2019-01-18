@@ -90,9 +90,28 @@
   <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Type your answer here" v-model="usaPresent">
 </form>
       </li>
-      <li v-if="usaPresent === 'Donald Trump'">Next question is comming...</li>
+
+      <li v-if="usaPresent === 'Donald Trump'">
+<form class="form-inline">
+  <label class="mr-2" for="inlineFormInputName2">Who is the current Prime minister of Canada?</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Type your answer here" v-model="canadaPrime">
+</form>
+      </li>
+
+      <li v-if="canadaPrime === 'Justin Trudeau'">
+<form class="form-inline">
+  <label class="mr-2" for="inlineFormInputName2">What's the title of Doug Ford?</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Type your answer here" v-model="dougTitle">
+</form>
+      </li>
     </ul>
   </div>
+  </transition>
+
+  <transition name="fade">
+    <div v-if="dougTitle === 'Premier of Ontario'">
+      <h1 class="text-center">You are the Winner</h1>
+    </div>
   </transition>
 
 </main>

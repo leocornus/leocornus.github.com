@@ -16,6 +16,8 @@ var app = new Vue({
     staticMessage: 'Hello Vue.js!',
 
     usaPresent: '',
+    canadaPrime: '',
+    dougTitle: ''
   },
   // computed will binding dynamic data, it just like 
   // data, but could use function.
