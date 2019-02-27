@@ -21,6 +21,8 @@ echo '
 </ul>
 </body></html>' >> index.html
 
+echo "<!-- Generated on $(date) -->" >> index.html
+
 echo 'File generated!'
 echo '============'
 cat index.html
