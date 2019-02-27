@@ -2,6 +2,11 @@
 
 echo 'Start to generate the index.html file for this folder...'
 
+echo ' 
+<!DOCTYPE html>
+<html><body>
+<ul>' > index.html
+
 HTMLS=*.html
 #HTMLS=find . -name '*.html'
 
@@ -9,10 +14,13 @@ HTMLS=*.html
 #for file in '*.html'
 for file in $HTMLS
 do 
-    echo $file
+    echo "<li><a href='$file'>$file</a></li>" >> index.html
 done
 
-echo ' 
-<html>
-</html>
-' > index.html
+echo '
+</ul>
+</body></html>' >> index.html
+
+echo 'File generated!'
+echo '============'
+cat index.html
