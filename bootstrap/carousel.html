@@ -1,0 +1,28 @@
+<!-- carousel modal -->
+<div :id="doc['.id']" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<b-carousel
+      id="carousel1"
+      style="text-shadow: 1px 1px 2px #333;"
+      controls
+      indicators
+      background="#ababab"
+      :interval="4000"
+      img-width="1024"
+      img-height="480"
+      v-model="slide"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+  <b-carousel-slide v-for="(img, index) in doc['img.uri.preview']"
+    :img-src="img" :index="index" :key="index"
+  >
+  </b-carousel-slide>
+</b-carousel>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END carousel modal -->
