@@ -20,16 +20,16 @@
     <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-        <v-card dark color="primary">
+        <v-card dark color="red">
           <v-card-text class="px-0">
             Hello Vuetify World!
           </v-card-text>
         </v-card>
       </v-flex>
 
-      <v-flex v-for="i in 2" :key="`6${i}`" xs3>
-        <v-card dark color="secondary">
-          <v-card-text class="px-0">6</v-card-text>
+      <v-flex v-for="i in 12 * 12" :key="`6${i}`" xs1>
+        <v-card dark :color="`#${(i * 50).toString(16)}`">
+          <v-card-text class="px-0">{{Math.ceil(i/12) * (((i - 1) % 12) + 1)}}</v-card-text>
         </v-card>
       </v-flex>
     </v-layout>
