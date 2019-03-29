@@ -28,7 +28,8 @@
       </v-flex>
 
       <v-flex v-for="i in 12 * 12" :key="`6${i}`" xs1>
-        <v-card dark :color="`#${(i * 50).toString(16)}`">
+        <v-card dark :nocolor="`#${(i * 50).toString(16)}`"
+                :color="`${colors[(i - 1) % 5]}`">
           <v-card-text class="px-0">{{Math.ceil(i/12) * (((i - 1) % 12) + 1)}}</v-card-text>
         </v-card>
       </v-flex>
@@ -40,9 +41,15 @@
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
   <script>
     new Vue({
-        el: '#app'
+        el: '#app',
+        data: {
+            colors: [
+               "red", "blue", "green", "yellow", "purple"
+            ]
+        }
     })
   </script>
   </body>
